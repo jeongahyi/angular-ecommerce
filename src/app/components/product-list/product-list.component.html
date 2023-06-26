@@ -1,3 +1,21 @@
-<p *ngFor="let product of products">
-  {{ product.title }}: {{ product.price | currency: "CAD" }}
-</p>
+<table class="table">
+  <thead>
+    <tr class="table-success">
+      <th></th>
+      <th>Title</th>
+      <th>Price</th>
+      <th>Category</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let product of products" class="align-middle">
+      <td>
+        <img src="{{ product.image }}" height="50" alt="{{ product.title }}" />
+      </td>
+      <td>{{ product.title }}</td>
+      <td>{{ product.price | currency: "CAD" }}</td>
+      <td>{{ product.category }}</td>
+    </tr>
+  </tbody>
+</table>
